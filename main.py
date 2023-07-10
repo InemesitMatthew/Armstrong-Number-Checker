@@ -62,6 +62,22 @@ if __name__ == "__main__":
     window.title("Armstrong Number Checker")
     window.geometry("350x200")
 
+    # Function to center the window on the screen
+    def center_window():
+        window.update_idletasks()  # Update window information
+        width = window.winfo_screenwidth()
+        height = window.winfo_screenheight()
+
+        # Calculate the coordinates to center the window
+        x = (width - window.winfo_width()) // 2
+        y = (height - window.winfo_height()) // 2
+
+        # Set the window position
+        window.geometry(f"+{x}+{y}")
+
+    # Call the center_window function at startup
+    window.after(0, center_window)
+
     # Define custom fonts
     title_font = Font(family="Arial", size=16, weight="bold")
     label_font = Font(family="Arial", size=12)
